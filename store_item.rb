@@ -10,33 +10,41 @@
 # p "The #{fruit2[:color]} #{fruit2[:item]} costs $#{fruit2[:price]}."
 # p "The #{fruit3[:color]} #{fruit3[:item]} costs $#{fruit3[:price]}."
 
+
+  # def item
+  #   return @item
+  # end
+  # def item=(input)
+  #   @item = input
+  # end
+  # def color
+  #   return @color
+  # end
+  # def color=(input)
+  #   @color = input
+  # end
+  # def price
+  #   return @price
+  # end
+  # def price=(input)
+  #   @price = input
+  # end
+
 class Product
-  def item
-    return @item
-  end
-  def item=(input)
-    @item = input
-  end
-  def color
-    return @color
-  end
-  def color=(input)
-    @color = input
-  end
-  def price
-    return @price
-  end
-  def price=(input)
-    @price = input
-  end
-  def initialize(input_item, input_color, input_price)
-    @item = input_item
-    @color = input_color
-    @price = input_price
+  
+  attr_reader :item, :color, :price, :active
+  attr_writer :item, :color, :price, :active
+  
+  def initialize(input_options)
+    @item = input_options[:item]
+    @color = input_options[:color]
+    @price = input_options[:price]
   end
 end
 
-product1 = Product.new("apple", "red", 1)
+product1 = Product.new(:item => "apple", :color => "red", :price => 1)
+p product1.item
+product1.item = "banana"
 p product1.item
 p product1.color
 p product1.price
