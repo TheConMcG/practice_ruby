@@ -39,12 +39,18 @@ class Product
     @item = input_options[:item]
     @color = input_options[:color]
     @price = input_options[:price]
+    @in_stock = input_options[:in_stock]
   end
+  def print_info
+    if @in_stock == true
+      p "The #{@color} #{@item} cost $#{price} each."
+    elsif @in_stock == false
+      p "The #{@color} #{@item} is out of stock."
+    end
+  end
+
 end
 
-product1 = Product.new(:item => "apple", :color => "red", :price => 1)
-p product1.item
-product1.item = "banana"
-p product1.item
-p product1.color
-p product1.price
+product1 = Product.new(:item => "apple", :color => "red", :price => 1, :in_stock => false)
+
+p product1.print_info
