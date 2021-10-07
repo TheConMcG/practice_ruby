@@ -31,3 +31,5 @@
 # cmd + d = edit duplicate text at same time
 
 #in a ruby class you can use "attr_reader and attr_writer with symobls in order to make read/write automated.
+
+# cmd + 
