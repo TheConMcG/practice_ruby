@@ -43,13 +43,17 @@ class Product
   end
   def print_info
     if @in_stock == true
-      p "The #{@color} #{@item} cost $#{price} each."
+      @info = "The #{@color} #{@item} cost $#{price} each."
     elsif @in_stock == false
-      p "The #{@color} #{@item} is out of stock."
+      @info = "The #{@color} #{@item} is out of stock."
     end
+    return @info
   end
 
 end
+
+class Vegetable < Product
+  def 
 
 product1 = Product.new(:item => "apple", :color => "red", :price => 1, :in_stock => false)
 
