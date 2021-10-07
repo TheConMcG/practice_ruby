@@ -39,7 +39,6 @@ class Manager < Employee
     i = 0
     while i < @employees.length
       @employees[i].give_annual_raise
-      @employees[i].print_info
       i += 1
     end
 
@@ -59,8 +58,8 @@ manager = Manager.new(first_name: "Saron", last_name: "Yitbarek", salary: 100000
 
 # manager.print_info
 # manager.send_report
-# manager.give_all_raises
 
+manager.give_all_raises
 manager.fire_all_employees
-p employee1.active
-p employee2.active
+p employee1
+p employee2
